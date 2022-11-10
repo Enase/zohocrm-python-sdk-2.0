@@ -3,7 +3,7 @@ try:
     import logging
     import re
     import json
-    from zcrmsdk.src.com.zoho.crm.api.util import Utility,Converter, Constants, StreamWrapper
+    from zcrmsdk.src.com.zoho.crm.api.util import Converter, Constants, StreamWrapper
     from zcrmsdk.src.com.zoho.crm.api.exception.sdk_exception import SDKException
 
 except Exception:
@@ -12,7 +12,6 @@ except Exception:
     import re
     from .converter import Converter
     from .constants import Constants
-    from .utility import Utility
     from .stream_wrapper import StreamWrapper
     from ..exception import SDKException
 
@@ -31,7 +30,6 @@ class FormDataConverter(Converter):
         self.common_api_handler = common_api_handler
 
     def form_request(self, request_instance, pack, instance_number, class_member_detail):
-
         path_split = str(pack).rpartition(".")
         class_name = self.module_to_class(path_split[-1])
         pack = path_split[0] + "." + class_name
@@ -63,7 +61,7 @@ class FormDataConverter(Converter):
 
             field_value = getattr(request_instance, self.construct_private_member(class_name=class_name, member_name=member_name))
 
-            if modification is not None and modification != 0 and field_value is not None and  self.value_checker(
+            if modification is not None and modification != 0 and self.value_checker(
                     class_name=class_name,
                     member_name=member_name,
                     key_details=member_detail,
@@ -174,8 +172,17 @@ class FormDataConverter(Converter):
     def get_response(self, response, pack):
         return None
 
-    @staticmethod
-    def construct_private_member(class_name, member_name):
+    def construct_private_member(self, class_name, member_name):
         return '_' + class_name + '__' + member_name
 
+    def module_to_class(self, module_name):
+        class_name = module_name
 
+        if "_" in module_name:
+            class_name = ''
+            module_split = str(module_name).split('_')
+            for each_name in module_split:
+                each_name = each_name.capitalize()
+                class_name += each_name
+
+        return class_name

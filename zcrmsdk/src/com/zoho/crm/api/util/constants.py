@@ -19,8 +19,6 @@ class Constants(object):
 
     REQUEST_METHOD_DELETE = "DELETE"
 
-    GIVEN_VALUE = "given-value"
-
     REQUEST_METHOD_PATCH = 'PATCH'
 
     OAUTH_HEADER_PREFIX = "Zoho-oauthtoken "
@@ -29,96 +27,7 @@ class Constants(object):
 
     API_NAME = "api_name"
 
-    PHOTO = "photo"
-
-    API_VERSION = "2.0"
-
-    CRM = "crm"
-
-    INPUT_ERROR = "INPUT_ERROR"
-
-    LOGGER_LEVELS = {
-        "CRITICAL": "CRITICAL",
-        "ERROR": "ERROR",
-        "WARNING": "WARNING",
-        "INFO": "INFO",
-        "DEBUG": "DEBUG",
-        "NOTSET": "NOTSET"
-    }      
-
-    DEFAULT_MODULENAME_VS_APINAME = {
-
-        "leads": "Leads",
-
-        "contacts": "Contacts",
-
-        "accounts": "Accounts",
-
-        "deals": "Deals",
-
-        "tasks": "Tasks",
-
-        "events": "Events",
-
-        "activities": "Activities",
-
-        "calls": "Calls",
-
-        "products": "Products",
-
-        "quotes": "Quotes",
-
-        "sales_orders": "Sales_Orders",
-
-        "purchase_orders": "Purchase_Orders",
-
-        "invoices": "Invoices",
-
-        "campaigns": "Campaigns",
-
-        "vendors": "Vendors",
-
-        "price_books": "Price_Books",
-
-        "cases": "Cases",
-
-        "solutions": "Solutions",
-
-        "visits": "Visits",
-
-        "approvals": "Approvals",
-
-        "notes": "Notes",
-
-        "attachments": "Attachments",
-
-        "actions_performed": "Actions_Performed",
-
-    }
-
-    PROXY_SETTINGS = "Proxy settings - "
-
-    PROXY_HOST = "Host: "
-
-    PROXY_PORT = "Port: "
-
-    PROXY_USER = "User: "
-
-    PROXY_DOMAIN = "Domain: "
-
-    GET_TOKEN_BY_ID_DB_ERROR = "Exception in getTokenById - DBStore : Given ID is invalid"
-
-    GET_TOKEN_BY_ID_FILE_ERROR = "Exception in getTokenById - FileStore : Given ID is invalid"
-
-    MYSQL_TABLE_NAME = "oauthtoken"
-
-    SWITCH_USER_ERROR = "SWITCH USER ERROR"
-
-    LOGGER_INITIALIZATION_ERROR = "Exception in Logger Initialization : "
-
     INVALID_ID_MSG = "The given id seems to be invalid."
-
-    RESOURCE_PATH_INVALID_ERROR_MESSAGE = "Resource Path MUST be a valid directory."
 
     API_MAX_RECORDS_MSG = "Cannot process more than 100 records at a time."
 
@@ -146,13 +55,9 @@ class Constants(object):
 
     CLIENT_SECRET = "client_secret"
 
-    REDIRECT_URI = "redirect_uri"
+    REDIRECT_URL = "redirect_uri"
 
-    REDIRECT_URL = "redirect_url"
-
-    OBJECT = "Object"
-
-    DATA_TYPE = {
+    TYPE_VS_DATATYPE = {
         "String": str,
         "List": list,
         "Integer": int,
@@ -168,15 +73,11 @@ class Constants(object):
 
     OBJECT_KEY = "object"
 
-    PHOTO_SUPPORTED_MODULES = ["leads", "contacts", "accounts", "products", "vendors"]
-
     GIVEN_LENGTH = "given-length"
 
     ZOHO_SDK = "X-ZOHO-SDK"
 
-    SDK_VERSION = "5.0.0"
-
-    ZOHO_API_VERSION = "2.0"
+    SDK_VERSION = "3.1.0"
 
     CONTENT_DISPOSITION = "Content-Disposition"
 
@@ -274,7 +175,7 @@ class Constants(object):
 
     REQUIRED = "required"
 
-    REQUIRED_IN_UPDATE = "required-in-update"
+    REQUIRED_IN_UPDATE = "required_in_update"
 
     PRIMARY = "primary"
 
@@ -346,21 +247,11 @@ class Constants(object):
 
     CLASSES = "classes"
 
-    LOG_FILE_NAME = "sdk_logs.log"
-
-    TOKEN_FILE = "sdk_tokens.txt"
+    LOGFILE_NAME = "sdk_logs.log"
 
     USER = "user"
 
     EXPECTED_TYPE = "expected-type"
-
-    USER_AGENT = "Mozilla/5.0"
-
-    USER_AGENT_KEY = "user-agent"
-
-    AT = '@'
-
-    EXPECTED_TOKEN_TYPES = 'REFRESH, GRANT'
 
     INITIALIZATION_ERROR = "INITIALIZATION ERROR"
 
@@ -378,7 +269,7 @@ class Constants(object):
 
     EMAIL = "email"
 
-    USER_SIGNATURE_ERROR = "USERSIGNATURE ERROR"
+    USER_SIGNATURE_ERROR = "USERSIGNATURE ERROR";
 
     USER_INITIALIZATION_ERROR = "Error during User Initialization"
 
@@ -486,7 +377,7 @@ class Constants(object):
 
     RESOURCE_PATH_ERROR_MESSAGE = "Resource Path MUST NOT be None/empty."
 
-    SET_CONTENT_TYPE_HEADER = ["/crm/bulk/v2/read", "/crm/bulk/v2/write"]
+    SET_TO_CONTENT_TYPE = ["/crm/bulk/v2/read", "/crm/bulk/v2/write"]
 
     CONTENT_TYPE_HEADER = "Content-Type"
 
@@ -495,16 +386,6 @@ class Constants(object):
     ATTACHMENT_ID = "attachment_id"
 
     FILE_ID = "file_id"
-
-    GENERATED_TYPE = "generated_type"
-
-    GENERATED_TYPE_CUSTOM = "custom"
-
-    UPLOAD_PHOTO_UNSUPPORTED_MESSAGE = "Photo Upload Operation is not supported by the module: "
-
-    SDK_MODULE_METADATA = "SDK-MODULE-METADATA"
-
-    UPLOAD_PHOTO_UNSUPPORTED_ERROR = "UPLOAD PHOTO UNSUPPORTED MODULE"
 
     DELETE_FIELD_FILE_ERROR = "Exception in deleting Current User Fields file : "
 
@@ -554,7 +435,7 @@ class Constants(object):
 
     REQUEST_CATEGORY_ACTION = "ACTION"
 
-    SKIP_MANDATORY = "skip-mandatory"
+    SKIP_MANDATORY = "skip_mandatory"
 
     FORMULA = "formula"
 
@@ -604,6 +485,8 @@ class Constants(object):
 
     PARAM_NAME_NONE_ERROR_MESSAGE = "Param Name MUST NOT be None"
 
+    SWITCH_USER_ERROR = "SWITCH USER ERROR"
+
     USER_PROXY_ERROR = "USERPROXY ERROR"
 
     HOST_ERROR_MESSAGE = "Host MUST NOT be None"
@@ -622,6 +505,14 @@ class Constants(object):
 
     ATTACHMENTS = "$attachments"
 
+    PROXY_SETTINGS = "Proxy settings - "
+
+    PROXY_HOST = "Host: "
+
+    PROXY_PORT = "Port: "
+
+    PROXY_USER = "User: "
+
     JSON_FILE_EXTENSION = ".json"
 
     FILE_ERROR = "file_error"
@@ -635,31 +526,3 @@ class Constants(object):
     USER_MAIL_NULL_ERROR_MESSAGE = "User Mail MUST NOT be None. Set value to user_mail."
 
     JSON_DETAILS_ERROR = "ERROR IN READING JSONDETAILS FILE"
-
-    INVALID_TOKEN_ERROR = "INVALID TOKEN ERROR"
-
-    NO_ACCESS_TOKEN_ERROR = "ACCESS TOKEN IS NOT PRESENT IN RESPONSE"
-
-    CLIENT_ID_NULL_ERROR_MESSAGE = "ClientID MUST NOT be null"
-
-    CLIENT_SECRET_NULL_ERROR_MESSAGE = "ClientSecret MUST NOT be null"
-
-    REQUEST_PROXY_ERROR_MESSAGE = "request_proxy must be instance of Request Proxy"
-
-    USER_SIGNATURE_ERROR_MESSAGE = "user must be instance of userSignature."
-
-    ENVIRONMENT_ERROR_MESSAGE = "environment must be instance of Environment."
-
-    SDK_CONFIG_ERROR_MESSAGE = "sdk_config must be instance of sdkConfig."
-
-    TOKEN_ERROR_MESSAGE = "token must be instance of Token."
-
-    STORE_ERROR_MESSAGE = "store must be instance of Store."
-
-    SKIP_MODULES = ["deals"]
-
-    PYTHON = "python_"
-
-    OAUTH_MANDATORY_KEYS = ["grant_token", "refresh_token", "id", "access_token"]
-
-    OWNER_LOOKUP = "ownerlookup"
